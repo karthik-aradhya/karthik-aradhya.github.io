@@ -3,1833 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepika M. | Systems & Compliance Engineer</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
-
-        :root {
-            --primary: #1a365d;
-            --primary-light: #2c5282;
-            --primary-lighter: #ebf4ff;
-            --accent: #e53e3e;
-            --accent-soft: #fc8181;
-            --gold: #d69e2e;
-            --gold-light: #fefcbf;
-            --dark: #1a202c;
-            --gray-900: #171923;
-            --gray-800: #2d3748;
-            --gray-700: #4a5568;
-            --gray-600: #718096;
-            --gray-500: #a0aec0;
-            --gray-400: #cbd5e0;
-            --gray-300: #e2e8f0;
-            --gray-200: #edf2f7;
-            --gray-100: #f7fafc;
-            --white: #ffffff;
-            --gradient-1: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #2b6cb0 100%);
-            --gradient-2: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 14px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
-            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--gray-800);
-            background: var(--gray-100);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* ===== NAVIGATION ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(26, 54, 93, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 0 2rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .navbar.scrolled {
-            padding: 0 2rem;
-            background: rgba(26, 54, 93, 0.98);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .nav-logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .nav-logo .logo-icon {
-            width: 38px;
-            height: 38px;
-            background: var(--accent);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1rem;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 0;
-        }
-
-        .nav-links li a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 8px 18px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            letter-spacing: 0.3px;
-            text-transform: uppercase;
-        }
-
-        .nav-links li a:hover,
-        .nav-links li a.active {
-            color: var(--white);
-            background: rgba(255,255,255,0.12);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            padding: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2.5px;
-            background: white;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            min-height: 100vh;
-            background: var(--gradient-1);
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse at 20% 50%, rgba(99, 179, 237, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 20%, rgba(229, 62, 62, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 60% 80%, rgba(214, 158, 46, 0.08) 0%, transparent 50%);
-        }
-
-        .hero-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 50%;
-            animation: float-particle linear infinite;
-        }
-
-        @keyframes float-particle {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 120px 2rem 80px;
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text {
-            color: white;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 28px;
-            backdrop-filter: blur(10px);
-            letter-spacing: 0.5px;
-        }
-
-        .hero-badge .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background: #48bb78;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.5); }
-            50% { box-shadow: 0 0 0 8px rgba(72, 187, 120, 0); }
-        }
-
-        .hero-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-name .highlight {
-            color: var(--accent-soft);
-            position: relative;
-        }
-
-        .hero-role {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 28px;
-            line-height: 1.5;
-        }
-
-        .hero-role span {
-            color: var(--accent-soft);
-            font-weight: 600;
-        }
-
-        .hero-description {
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.65);
-            line-height: 1.8;
-            margin-bottom: 40px;
-            max-width: 520px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: none;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.35);
-        }
-
-        .btn-primary:hover {
-            background: #c53030;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.45);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.6);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Stats Card */
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .stats-card {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 24px;
-            padding: 40px;
-            width: 100%;
-            max-width: 420px;
-        }
-
-        .stats-card-header {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 30px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .avatar-circle {
-            width: 58px;
-            height: 58px;
-            min-width: 58px;
-            background: linear-gradient(135deg, var(--accent) 0%, #c53030 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: white;
-            font-family: 'Playfair Display', serif;
-            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3);
-        }
-
-        .avatar-info .name {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .avatar-info .title {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.55);
-            margin-top: 2px;
-        }
-
-        .stats-card-title {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: white;
-            min-width: 75px;
-            line-height: 1;
-        }
-
-        .stat-number .suffix {
-            font-size: 1.1rem;
-            color: var(--accent-soft);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.5;
-        }
-
-        .stat-label strong {
-            color: rgba(255,255,255,0.9);
-            display: block;
-            font-weight: 600;
-        }
-
-        /* Industries Tags */
-        .industry-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .industry-tag {
-            background: rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.85);
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 0.76rem;
-            font-weight: 500;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255,255,255,0.4);
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-8px); }
-            60% { transform: translateX(-50%) translateY(-4px); }
-        }
-
-        .scroll-indicator .mouse {
-            width: 24px;
-            height: 38px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .scroll-indicator .mouse::after {
-            content: '';
-            width: 4px;
-            height: 8px;
-            background: rgba(255,255,255,0.5);
-            border-radius: 2px;
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scroll-wheel 2s infinite;
-        }
-
-        @keyframes scroll-wheel {
-            0% { opacity: 1; top: 8px; }
-            100% { opacity: 0; top: 20px; }
-        }
-
-        /* ===== SECTION STYLES ===== */
-        .section {
-            padding: 100px 2rem;
-        }
-
-        .section-container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-label {
-            display: inline-block;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent);
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 16px;
-            letter-spacing: -0.3px;
-        }
-
-        .section-subtitle {
-            font-size: 1.05rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        .title-decoration {
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 2px;
-            margin: 20px auto 0;
-        }
-
-        /* ===== OBJECTIVE SECTION ===== */
-        #objective {
-            background: var(--white);
-        }
-
-        .objective-card {
-            background: linear-gradient(135deg, var(--primary-lighter) 0%, #f0f7ff 100%);
-            border-radius: 20px;
-            padding: 50px;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(44, 82, 130, 0.1);
-        }
-
-        .objective-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 30px;
-            font-size: 8rem;
-            font-family: 'Playfair Display', serif;
-            color: rgba(44, 82, 130, 0.08);
-            line-height: 1;
-        }
-
-        .objective-text {
-            font-size: 1.15rem;
-            color: var(--gray-700);
-            line-height: 1.9;
-            position: relative;
-            z-index: 1;
-            font-weight: 400;
-        }
-
-        /* ===== EXPERIENCE SECTION ===== */
-        #experience {
-            background: var(--gray-100);
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 40px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--accent), var(--primary), var(--gray-400));
-            border-radius: 3px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -33px;
-            top: 28px;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--white);
-            border: 4px solid var(--accent);
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .timeline-dot.current {
-            background: var(--accent);
-            box-shadow: 0 0 0 6px rgba(229, 62, 62, 0.15);
-        }
-
-        .timeline-dot.current::after {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .timeline-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-300);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .timeline-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
-        }
-
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--gradient-1);
-            border-radius: 3px 0 0 3px;
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .timeline-role {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .timeline-duration {
-            background: var(--primary-lighter);
-            color: var(--primary-light);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .timeline-duration.current-badge {
-            background: #fed7d7;
-            color: var(--accent);
-        }
-
-        .timeline-org {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray-700);
-            margin-bottom: 10px;
-        }
-
-        .timeline-meta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .meta-tag {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.82rem;
-            color: var(--gray-600);
-        }
-
-        .meta-tag svg {
-            width: 14px;
-            height: 14px;
-            flex-shrink: 0;
-        }
-
-        /* ===== SUMMARY SECTION ===== */
-        #summary {
-            background: var(--white);
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .summary-item {
-            display: flex;
-            gap: 16px;
-            padding: 24px;
-            background: var(--gray-100);
-            border-radius: 14px;
-            border: 1px solid var(--gray-300);
-            transition: all 0.3s ease;
-        }
-
-        .summary-item:hover {
-            background: var(--white);
-            border-color: var(--primary-light);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-
-        .summary-icon {
-            width: 44px;
-            height: 44px;
-            min-width: 44px;
-            background: var(--primary-lighter);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .summary-item:hover .summary-icon {
-            background: var(--primary);
-            color: white;
-        }
-
-        .summary-text {
-            font-size: 0.92rem;
-            color: var(--gray-700);
-            line-height: 1.7;
-        }
-
-        /* ===== RESPONSIBILITIES SECTION ===== */
-        #responsibilities {
-            background: var(--gray-100);
-        }
-
-        .resp-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .resp-item {
-            background: var(--white);
-            border-radius: 14px;
-            padding: 24px;
-            border: 1px solid var(--gray-300);
-            transition: all 0.3s ease;
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-        }
-
-        .resp-item:hover {
-            border-color: var(--primary-light);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-
-        .resp-number {
-            min-width: 32px;
-            height: 32px;
-            background: var(--primary);
-            color: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-
-        .resp-text {
-            font-size: 0.9rem;
-            color: var(--gray-700);
-            line-height: 1.7;
-        }
-
-        /* ===== SKILLS SECTION ===== */
-        #skills {
-            background: var(--primary);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #skills::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(ellipse at 10% 50%, rgba(99, 179, 237, 0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 90% 30%, rgba(229, 62, 62, 0.08) 0%, transparent 50%);
-        }
-
-        #skills .section-label {
-            color: var(--accent-soft);
-        }
-
-        #skills .section-title {
-            color: white;
-        }
-
-        #skills .section-subtitle {
-            color: rgba(255,255,255,0.6);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .skill-category {
-            background: rgba(255,255,255,0.07);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 20px;
-            padding: 36px;
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            background: rgba(255,255,255,0.12);
-            transform: translateY(-4px);
-            border-color: rgba(255,255,255,0.2);
-        }
-
-        .skill-cat-icon {
-            width: 56px;
-            height: 56px;
-            background: rgba(229, 62, 62, 0.2);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .skill-cat-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-tag {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: rgba(255,255,255,0.85);
-            padding: 7px 14px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.3);
-            color: white;
-        }
-
-        /* ===== EDUCATION SECTION ===== */
-        #education {
-            background: var(--white);
-        }
-
-        .education-card {
-            background: var(--gray-100);
-            border-radius: 20px;
-            padding: 48px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            border: 1px solid var(--gray-300);
-            max-width: 750px;
-            margin: 0 auto;
-            transition: all 0.3s ease;
-        }
-
-        .education-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-
-        .edu-icon-wrapper {
-            width: 100px;
-            height: 100px;
-            min-width: 100px;
-            background: var(--gradient-1);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-
-        .edu-details h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .edu-details .edu-institution {
-            font-size: 1.05rem;
-            color: var(--gray-700);
-            font-weight: 500;
-            margin-bottom: 4px;
-        }
-
-        .edu-details .edu-specialization {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            margin-bottom: 4px;
-        }
-
-        .edu-details .edu-location {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            margin-bottom: 14px;
-        }
-
-        .edu-year {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--primary-lighter);
-            color: var(--primary);
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--gray-900);
-            color: rgba(255,255,255,0.5);
-            text-align: center;
-            padding: 50px 2rem;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-avatar {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent) 0%, #c53030 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: white;
-            font-family: 'Playfair Display', serif;
-            margin: 0 auto 16px;
-        }
-
-        .footer-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 6px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .footer-title {
-            font-size: 0.88rem;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 20px;
-        }
-
-        .footer-divider {
-            width: 60px;
-            height: 2px;
-            background: var(--accent);
-            margin: 0 auto 20px;
-            border-radius: 1px;
-        }
-
-        .footer-copy {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.25);
-        }
-
-        /* ===== BACK TO TOP ===== */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(229, 62, 62, 0.35);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(229, 62, 62, 0.45);
-        }
-
-        /* ===== PRINT STYLES ===== */
-        @media print {
-            .navbar, .back-to-top, .scroll-indicator, .hero-buttons { display: none !important; }
-            .hero { min-height: auto; padding: 40px 0; }
-            .section { padding: 40px 2rem; }
-            body { background: white; }
-            .timeline-card, .summary-item, .resp-item, .education-card { box-shadow: none; border: 1px solid #ddd; }
-            #skills { background: #1a365d; }
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero-visual { order: -1; }
-            .stats-card { max-width: 100%; }
-            .skills-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: rgba(26, 54, 93, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 20px;
-                gap: 0;
-                transform: translateY(-110%);
-                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            .nav-links.active { transform: translateY(0); }
-
-            .nav-links li a {
-                padding: 14px 20px;
-                font-size: 0.95rem;
-                display: block;
-            }
-
-            .hero-name { font-size: 2.6rem; }
-            .section { padding: 70px 1.5rem; }
-            .section-title { font-size: 2rem; }
-            .summary-grid, .resp-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
-
-            .education-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 36px;
-            }
-
-            .objective-card { padding: 32px; }
-            .timeline { padding-left: 30px; }
-            .timeline-dot { left: -23px; width: 22px; height: 22px; }
-            .hero-buttons { flex-direction: column; }
-            .btn { justify-content: center; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-name { font-size: 2rem; }
-            .stat-number { font-size: 1.8rem; }
-            .timeline-header { flex-direction: column; }
-        }
-    </style>
+    <title>Karthik M | Software Developer</title>
+    <meta name="description" content="Karthik M - Software Developer with 7+ years of experience in building robust desktop applications using C++, C#, and SQL.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+    <div class="background-effects">
+        <div class="gradient-sphere shape-1"></div>
+        <div class="gradient-sphere shape-2"></div>
+    </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <div class="logo-icon">DM</div>
-                Deepika M.
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#objective">Objective</a></li>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <a href="#home" class="logo">KM.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#summary">Summary</a></li>
-                <li><a href="#responsibilities">Roles</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="pulse-dot"></span>
-                    Open to Opportunities
-                </div>
-                <h1 class="hero-name">
-                    <span class="highlight">Deepika M.</span>
-                </h1>
-                <p class="hero-role">
-                    Systems & Compliance Engineer<br>
-                    <span>Driving Regulatory Excellence</span> Across Global Supply Chains
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero fade-in">
+            <div class="hero-content">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="glitch" data-text="KARTHik M">KARTHIK M</h1>
+                <h2 class="role">Software Developer</h2>
+                <p class="summary">
+                    With 7+ years of experience in building robust desktop applications using C++, C#, and SQL. 
+                    Specialized in developing scalable healthcare and embedded solutions with a focus on performance, 
+                    code quality, and Agile delivery.
                 </p>
-                <p class="hero-description">
-                    7+ years of specialized experience in product and material compliance,
-                    environmental regulations, and sustainability across multiple industries.
-                    Passionate about ensuring global chemical regulatory compliance.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#experience" class="btn btn-primary">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M21 13v7a1 1 0 01-1 1H4a1 1 0 01-1-1v-7"/>
-                            <path d="M7 10l5 5 5-5"/>
-                            <path d="M12 15V3"/>
-                        </svg>
-                        View Experience
+                <div class="contact-links">
+                    <a href="mailto:karthikraj1996@gmail.com" class="btn primary-btn">
+                        <i data-lucide="mail"></i> karthikraj1996@gmail.com
                     </a>
-                    <a href="#skills" class="btn btn-outline">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                        Technical Skills
+                    <a href="https://www.linkedin.com/in/karthik-m-473a07135" target="_blank" class="btn secondary-btn">
+                        <i data-lucide="linkedin"></i> LinkedIn
                     </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="stats-card">
-                    <!-- Profile Header inside card -->
-                    <div class="stats-card-header">
-                        <div class="avatar-circle">DM</div>
-                        <div class="avatar-info">
-                            <div class="name">Deepika M.</div>
-                            <div class="title">Systems & Compliance Engineer</div>
-                        </div>
-                    </div>
-                    <div class="stats-card-title">Career Snapshot</div>
-                    <div class="stat-item">
-                        <div class="stat-number">7<span class="suffix">+</span></div>
-                        <div class="stat-label">
-                            <strong>Years of Experience</strong>
-                            Product & Material Compliance
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">
-                            <strong>Industries Served</strong>
-                            Automotive, EEE, Medical, Aerospace, Energy
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">
-                            <strong>Organizations</strong>
-                            Progressive Career Growth
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">15<span class="suffix">+</span></div>
-                        <div class="stat-label">
-                            <strong>Compliance Tools</strong>
-                            IMDS, CDX, SCIP, SAP & More
-                        </div>
-                    </div>
-                    <div class="industry-tags">
-                        <span class="industry-tag">🚗 Automotive</span>
-                        <span class="industry-tag">⚡ EEE</span>
-                        <span class="industry-tag">✈️ Aerospace</span>
-                        <span class="industry-tag">🏥 Medical</span>
-                        <span class="industry-tag">🔋 Energy</span>
+                    <a href="tel:+919741166419" class="btn secondary-btn">
+                        <i data-lucide="phone"></i> 9741166419
+                    </a>
+                    <div class="location">
+                        <i data-lucide="map-pin"></i> Bengaluru, India
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-            Scroll Down
-        </div>
-    </section>
+        </section>
 
-    <!-- Objective Section -->
-    <section class="section" id="objective">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Career Goal</span>
-                <h2 class="section-title">Objective</h2>
-                <div class="title-decoration"></div>
-            </div>
-            <div class="objective-card">
-                <p class="objective-text">
-                    Deepika M. seeks to work in a dynamic environment by taking on challenging roles with
-                    increasing responsibility, focused on achieving key goals. She aims to leverage her skills in
-                    <strong>innovation</strong>, <strong>resourcefulness</strong>, and <strong>adaptability</strong>
-                    to drive success while advancing her own professional growth, fostering mutual development.
+        <!-- About Section -->
+        <section id="about" class="section fade-in">
+            <h2 class="section-title reveal-text">About Me</h2>
+            <div class="glass-card">
+                <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
+                    I am a highly skilled Software Developer with over 7 years of extensive experience designing and building robust desktop, embedded, and scalable software solutions. Currently working at <strong>Applied Materials</strong>, I am deeply involved in semiconductor chip manufacturing technology, specifically developing sequencer software for the Endura product. My foundational experience includes major contributions at Philips, where I honed my expertise in C++, C#, multithreading, and performance optimization for critical healthcare systems. Driven by a passion for continuous learning, I am actively expanding my knowledge into Python and Generative AI to stay at the forefront of software innovation.
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section class="section" id="experience">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Career Journey</span>
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">Deepika's progressive career path across leading organizations in compliance engineering</p>
-                <div class="title-decoration"></div>
-            </div>
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title reveal-text">Work Experience</h2>
             <div class="timeline">
-
-                <!-- Current Role -->
-                <div class="timeline-item">
-                    <div class="timeline-dot current"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
-                            <div>
-                                <div class="timeline-role">Systems & Compliance Engineer</div>
-                                <div class="timeline-org">Horizon Global</div>
-                            </div>
-                            <span class="timeline-duration current-badge">Nov 2023 – Present</span>
-                        </div>
-                        <div class="timeline-meta">
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                                </svg>
-                                Automotive & EEE
-                            </span>
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                                </svg>
-                                Current Role
-                            </span>
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="8.5" cy="7" r="4"/>
-                                </svg>
-                                Client: OEMs, Tier-1 & Tier-2 Suppliers
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Role 3 -->
-                <div class="timeline-item">
+                
+                <!-- Applied Materials -->
+                <div class="timeline-item slide-in">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
+                    <div class="timeline-content glass-card">
+                        <div class="experience-header">
                             <div>
-                                <div class="timeline-role">Technical Specialist I</div>
-                                <div class="timeline-org">TE Connectivity</div>
+                                <h3>Software Developer</h3>
+                                <h4>Applied Materials</h4>
                             </div>
-                            <span class="timeline-duration">Apr 2023 – Oct 2023</span>
+                            <span class="date-badge">Feb 2026 – Present</span>
                         </div>
-                        <div class="timeline-meta">
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                                </svg>
-                                Energy
-                            </span>
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                                </svg>
-                                7 Months
-                            </span>
-                        </div>
+                        <p class="location-text">Bengaluru, India</p>
+                        <ul class="achievements">
+                            <li>Developing and maintaining software solutions for the Endura product, a critical system in semiconductor chip manufacturing.</li>
+                            <li>Working specifically on the sequencer for the Endura, ensuring high reliability, precision, and performance in complex manufacturing workflows.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Role 2 -->
-                <div class="timeline-item">
+                <!-- Philips -->
+                <div class="timeline-item slide-in">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
+                    <div class="timeline-content glass-card">
+                        <div class="experience-header">
                             <div>
-                                <div class="timeline-role">Material Compliance Engineer</div>
-                                <div class="timeline-org">CIE Golde Roofs Center India Pvt. Ltd.</div>
+                                <h3>Software Technologist I</h3>
+                                <h4>Philips</h4>
                             </div>
-                            <span class="timeline-duration">Nov 2021 – Mar 2023</span>
+                            <span class="date-badge">Jan 2022 – Feb 2026</span>
                         </div>
-                        <div class="timeline-meta">
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                                </svg>
-                                Automotive
-                            </span>
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                                </svg>
-                                1 Year 5 Months
-                            </span>
-                        </div>
+                        <p class="location-text">Bengaluru, India</p>
+                        <ul class="achievements">
+                            <li>Actively contributed to the design, development, and enhancement of the Philips EPIQ/Affiniti ultrasound imaging solutions.</li>
+                            <li>Implemented multiple product features and resolved software issues across VM10, VM11, VM12, and VM14 platform releases.</li>
+                            <li>Developed core application logic using C++ and C# with a strong focus on performance, reliability, and multithreading techniques.</li>
+                            <li>Investigated and resolved complex multithreading issues, including deadlocks and race conditions.</li>
+                            <li>Served as the Feature Lead for VM12.0 Annotation Improvements, refining workflows and UI/UX.</li>
+                            <li>Engaged in the design and development of VM14.0 Koios Integration, incorporating AI-powered diagnostic support for cancer detection.</li>
+                            <li>Delivered key contributions in the Analysis Domain for diagnostic result calculation, aggregation, and visual presentation.</li>
+                            <li>Developed unit tests using MSTest and HippoMocks for mocking dependencies.</li>
+                            <li>Wrote efficient SQL queries and stored procedures to manipulate backend data.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- Role 1 -->
-                <div class="timeline-item">
+                <!-- Mindtree -->
+                <div class="timeline-item slide-in">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="timeline-header">
+                    <div class="timeline-content glass-card">
+                        <div class="experience-header">
                             <div>
-                                <div class="timeline-role">Compliance Engineer</div>
-                                <div class="timeline-org">Global PCCS</div>
+                                <h3>Senior Software Engineer</h3>
+                                <h4>Mindtree</h4>
                             </div>
-                            <span class="timeline-duration">Jul 2018 – Oct 2021</span>
+                            <span class="date-badge">Oct 2018 – Dec 2021</span>
                         </div>
-                        <div class="timeline-meta">
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-                                </svg>
-                                Automotive, EEE, Aerospace, Medical Devices
-                            </span>
-                            <span class="meta-tag">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                                </svg>
-                                3 Years 4 Months
-                            </span>
+                        <p class="location-text">Bengaluru, India</p>
+                        
+                        <div class="project-block">
+                            <h5>Project: HSUPro</h5>
+                            <p class="project-desc">Native Windows-based desktop application for Sennheiser device users to manage firmware, configurations, and asset info.</p>
+                            <ul class="achievements">
+                                <li>Developed new features and integrated support for new devices.</li>
+                                <li>Managed InstallShield-based installer packages to support seamless deployment and upgrades.</li>
+                                <li>Independently managed and supported the application’s development for over six months.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-block">
+                            <h5>Project: EPOS Connect</h5>
+                            <p class="project-desc">Cross-platform desktop application supporting asset management, firmware updates, and configuration for EPOS audio devices.</p>
+                            <ul class="achievements">
+                                <li>Contributed to a shared codebase reused across Windows, macOS, and thin clients.</li>
+                                <li>Implemented features using modern C++11 and resolved complex bugs utilizing log and static analysis tools.</li>
+                                <li>Applied STL and multithreading paradigms to develop high-performing code.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Summary Section -->
-    <section class="section" id="summary">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Expertise</span>
-                <h2 class="section-title">Professional Summary</h2>
-                <p class="section-subtitle">Core competencies and professional strengths Deepika has developed across 7+ years of industry experience</p>
-                <div class="title-decoration"></div>
-            </div>
-            <div class="summary-grid">
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">7+ years of hands-on experience in product and material compliance across Automotive, EEE, Medical, Aerospace, and Energy industries.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M9 12l2 2 4-4"/>
-                            <circle cx="12" cy="12" r="10"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Demonstrated ability to quickly comprehend business and functional requirements, applying environmental regulatory knowledge to ensure global chemical regulatory compliance.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                            <path d="M14 2v6h6"/>
-                            <path d="M16 13H8M16 17H8M10 9H8"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Proficient in Business Analysis, including requirements gathering, process mapping, and specifying validation criteria for translating business requirements into technical specifications.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                            <path d="M22 4L12 14.01l-3-3"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Instrumental in managing projects and implementing new frameworks, ensuring activities are completed within time and cost constraints while adhering to organizational quality standards.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Skilled coordinator, motivator, and team player, with a proven ability to inspire teams towards excellence and achievement.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Extensive experience managing various types of supply chains, providing swift solutions to issues through direct engagement with suppliers.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Hands-on experience in delivering environmental compliance declarations and FMDs. Expertise in analyzing BOMs, technical drawings, and Material Safety Data Sheets (MSDS).</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Effective communicator with strong cross-functional coordination capabilities across suppliers, customers, and internal stakeholders.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/>
-                            <rect x="8" y="2" width="8" height="4" rx="1"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Responsible for both qualitative and quantitative deliverables in project execution.</p>
-                </div>
-                <div class="summary-item">
-                    <div class="summary-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
-                            <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
-                        </svg>
-                    </div>
-                    <p class="summary-text">Committed to continuous learning and staying current with evolving environmental regulations and industry standards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Responsibilities Section -->
-    <section class="section" id="responsibilities">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">What Deepika Does</span>
-                <h2 class="section-title">Key Responsibilities</h2>
-                <p class="section-subtitle">Core functions and deliverables across Deepika's compliance engineering roles</p>
-                <div class="title-decoration"></div>
-            </div>
-            <div class="resp-grid">
-                <div class="resp-item">
-                    <div class="resp-number">01</div>
-                    <p class="resp-text">Analyzed customer specifications, BOMs, technical drawings, and FMDs to assess product composition and initiate compliance workflows.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">02</div>
-                    <p class="resp-text">Collected material and substance data from global suppliers and internal stakeholders through structured communication and follow-ups.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">03</div>
-                    <p class="resp-text">Created and submitted Part/Material data trees in IMDS, CDX and other compliance platforms as per customer requirements.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">04</div>
-                    <p class="resp-text">Conducted data quality validation and integrity checks on IMDS submissions to ensure compliance with GADSL and OEM standards.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">05</div>
-                    <p class="resp-text">Performed regulatory data screening using WPA, SPEC-STAR, and CMAP to identify hazardous substances and prepare SOC analysis reports.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">06</div>
-                    <p class="resp-text">Monitored emerging regulatory requirements across various geographies, analyzed their business impact and ensured organizational compliance.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">07</div>
-                    <p class="resp-text">Managed compliance system workflows and regulatory data queues, prioritizing requests to enable efficient handling of submissions.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">08</div>
-                    <p class="resp-text">Coordinated with materials teams, purchasing teams, and application engineers for new product launches and ongoing product improvements.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">09</div>
-                    <p class="resp-text">Developed and monitored compliance KPIs and operational metrics to track regulatory submission status and supplier response rates.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">10</div>
-                    <p class="resp-text">Scheduled and led team calls and customer correspondence to address environmental regulation survey queries and compliance risks.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">11</div>
-                    <p class="resp-text">Conducted training sessions and regulatory awareness webinars for internal teams and suppliers on compliance requirements and tools.</p>
-                </div>
-                <div class="resp-item">
-                    <div class="resp-number">12</div>
-                    <p class="resp-text">Tracked and reported monthly team performance metrics and compliance deliverables.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Capabilities</span>
-                <h2 class="section-title">Technical Expertise</h2>
-                <p class="section-subtitle">Deepika's comprehensive toolkit for regulatory compliance and environmental engineering</p>
-                <div class="title-decoration"></div>
-            </div>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title reveal-text">Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-cat-icon">🛠️</div>
-                    <h3 class="skill-cat-title">Compliance Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">IMDS</span>
-                        <span class="skill-tag">CAMDS</span>
-                        <span class="skill-tag">CDX</span>
-                        <span class="skill-tag">SCIP Database</span>
-                        <span class="skill-tag">iPoint</span>
-                        <span class="skill-tag">Agile PLM</span>
-                        <span class="skill-tag">SAP</span>
-                        <span class="skill-tag">BOMcheck</span>
-                        <span class="skill-tag">IPC 1752A</span>
-                        <span class="skill-tag">Chemsherpa</span>
-                        <span class="skill-tag">Assent</span>
+                <div class="skill-category glass-card hover-lift">
+                    <h3><i data-lucide="code-2"></i> Languages</h3>
+                    <div class="tags">
+                        <span class="tag">C++ (11/14/17)</span>
+                        <span class="tag">C</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-cat-icon">📋</div>
-                    <h3 class="skill-cat-title">Environmental Regulations</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">EU ELV</span>
-                        <span class="skill-tag">REACH</span>
-                        <span class="skill-tag">RoHS</span>
-                        <span class="skill-tag">Conflict Minerals</span>
-                        <span class="skill-tag">Prop 65</span>
-                        <span class="skill-tag">TSCA</span>
-                        <span class="skill-tag">MDR</span>
-                        <span class="skill-tag">PFAS</span>
-                        <span class="skill-tag">WEEE</span>
-                        <span class="skill-tag">PoPs</span>
-                        <span class="skill-tag">BPR</span>
-                        <span class="skill-tag">EMRT</span>
-                        <span class="skill-tag">Halogen Free</span>
+                
+                <div class="skill-category glass-card hover-lift">
+                    <h3><i data-lucide="wrench"></i> Tools & IDEs</h3>
+                    <div class="tags">
+                        <span class="tag">Visual Studio</span>
+                        <span class="tag">SSMS</span>
+                        <span class="tag">Installshield</span>
+                        <span class="tag">Wix Toolset</span>
+                        <span class="tag">Windbg</span>
+                        <span class="tag">SonarQube</span>
+                        <span class="tag">ReSharper</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-cat-icon">🌍</div>
-                    <h3 class="skill-cat-title">Sustainability & Software</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">EU CBAM</span>
-                        <span class="skill-tag">Microsoft Excel</span>
-                        <span class="skill-tag">PowerPoint</span>
-                        <span class="skill-tag">Microsoft Word</span>
-                        <span class="skill-tag">WPA</span>
-                        <span class="skill-tag">SPEC-STAR</span>
-                        <span class="skill-tag">CMAP</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section class="section" id="education">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Academic Background</span>
-                <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">Deepika's academic foundation in engineering</p>
-                <div class="title-decoration"></div>
-            </div>
-            <div class="education-card">
-                <div class="edu-icon-wrapper">🎓</div>
-                <div class="edu-details">
-                    <h3>Bachelor of Engineering</h3>
-                    <p class="edu-institution">Chemical Engineering</p>
-                    <p class="edu-location">Siddaganga Institute of Technology, Tumkur</p>
-                    <span class="edu-year">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="16" y1="2" x2="16" y2="6"/>
-                            <line x1="8" y1="2" x2="8" y2="6"/>
-                            <line x1="3" y1="10" x2="21" y2="10"/>
-                        </svg>
-                        2014 – 2018
-                    </span>
+                <div class="skill-category glass-card hover-lift">
+                    <h3><i data-lucide="check-circle"></i> Unit Testing</h3>
+                    <div class="tags">
+                        <span class="tag">MSTest</span>
+                        <span class="tag">Hippomocks</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card hover-lift">
+                    <h3><i data-lucide="git-branch"></i> Version Control & OS</h3>
+                    <div class="tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">Jira</span>
+                        <span class="tag">Azure DevOps</span>
+                        <span class="tag">Confluence</span>
+                        <span class="tag">Windows</span>
+                        <span class="tag">macOS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card hover-lift">
+                    <h3><i data-lucide="cpu"></i> Emerging Tech</h3>
+                    <div class="tags">
+                        <span class="tag">Generative AI</span>
+                        <span class="tag">AI Integration</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+        <!-- Education & Certifications Section -->
+        <section id="education" class="section dual-column">
+            <div class="column">
+                <h2 class="section-title reveal-text">Education</h2>
+                <div class="edu-cards">
+                    <div class="edu-card glass-card">
+                        <h4>Bachelor of Engineering in CSE</h4>
+                        <p class="institution">SJB Institute of Technology, Bengaluru</p>
+                        <div class="edu-meta">
+                            <span class="score">72.08%</span>
+                            <span class="year">June 2018</span>
+                        </div>
+                    </div>
+                    <div class="edu-card glass-card">
+                        <h4>Pre-University Course (10+2)</h4>
+                        <p class="institution">Leaders’ PU College, Gauribidanur</p>
+                        <div class="edu-meta">
+                            <span class="score">87.17%</span>
+                            <span class="year">July 2014</span>
+                        </div>
+                    </div>
+                    <div class="edu-card glass-card">
+                        <h4>Class 10 (ICSE)</h4>
+                        <p class="institution">Vidyanidhi Public School, Gauribidanur</p>
+                        <div class="edu-meta">
+                            <span class="score">82.82%</span>
+                            <span class="year">April 2012</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h2 class="section-title reveal-text">Certifications & Awards</h2>
+                
+                <div class="awards-list glass-card">
+                    <h3 class="subsection-title">Certifications</h3>
+                    <ul class="cert-list">
+                        <li><i data-lucide="award"></i> Programming for Everybody (Python) (Univ. of Michigan, Apr 2026)</li>
+                        <li><i data-lucide="award"></i> Intro to Generative AI for Software Dev (DeepLearning.AI, Apr 2026)</li>
+                        <li><i data-lucide="award"></i> AI For Everyone (DeepLearning.AI, Mar 2026)</li>
+                        <li><i data-lucide="award"></i> Identifying Security Vulnerabilities in C/C++ (Coursera, 2021)</li>
+                        <li><i data-lucide="award"></i> Object Oriented Data Structures in C++ (Coursera, 2020)</li>
+                        <li><i data-lucide="award"></i> C++ STL Programming (Aprameyah Tech, 2020)</li>
+                        <li><i data-lucide="award"></i> C++ Programming (Aprameyah Tech, 2019)</li>
+                    </ul>
+
+                    <h3 class="subsection-title mt-4">Awards</h3>
+                    <ul class="award-list">
+                        <li>
+                            <i data-lucide="star" class="star-icon"></i>
+                            <strong>SPOT Award (Philips)</strong>
+                            <p>For working on critical deliverables.</p>
+                        </li>
+                        <li>
+                            <i data-lucide="star" class="star-icon"></i>
+                            <strong>A-Team Award - 5 times (Mindtree)</strong>
+                            <p>For excellent team effort.</p>
+                        </li>
+                        <li>
+                            <i data-lucide="star" class="star-icon"></i>
+                            <strong>Unstoppable & HatsOff Awards (Mindtree)</strong>
+                            <p>For excellent contribution.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
         <div class="footer-content">
-            <div class="footer-avatar">DM</div>
-            <div class="footer-name">Deepika M.</div>
-            <div class="footer-title">Systems & Compliance Engineer &nbsp;|&nbsp; Product Compliance &nbsp;|&nbsp; Environmental Regulations</div>
-            <div class="footer-divider"></div>
-            <p class="footer-copy">© 2024 Deepika M. All rights reserved.</p>
+            <p>&copy; 2026 Karthik M. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" title="Back to Top">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    </button>
-
+    <script src="script.js"></script>
     <script>
-        // ===== PARTICLES =====
-        (function () {
-            const container = document.getElementById('particles');
-            for (let i = 0; i < 30; i++) {
-                const p = document.createElement('div');
-                p.className = 'particle';
-                p.style.left = Math.random() * 100 + '%';
-                p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
-                p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-                p.style.animationDelay = (Math.random() * 10) + 's';
-                container.appendChild(p);
-            }
-        })();
-
-        // ===== NAVBAR SCROLL =====
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // ===== MOBILE MENU =====
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // ===== ACTIVE NAV ON SCROLL =====
-        const sections = document.querySelectorAll('section[id]');
-        const navItems = document.querySelectorAll('.nav-links a');
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                if (scrollY >= section.offsetTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === '#' + current) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // ===== BACK TO TOP =====
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 500);
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ===== SCROLL ANIMATIONS =====
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
-
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.summary-item, .resp-item, .skill-category, .education-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            fadeObserver.observe(el);
-        });
-
-        // ===== COUNTER ANIMATION =====
-        function animateCounter(el, target, suffix = '') {
-            let current = 0;
-            const increment = target / 40;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                el.innerHTML = Math.floor(current) + (suffix ? `<span class="suffix">${suffix}</span>` : '');
-            }, 40);
-        }
-
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.querySelectorAll('.stat-number').forEach(counter => {
-                        if (!counter.dataset.animated) {
-                            counter.dataset.animated = 'true';
-                            const suffix = counter.querySelector('.suffix')?.textContent || '';
-                            const num = parseInt(counter.textContent);
-                            if (!isNaN(num)) animateCounter(counter, num, suffix);
-                        }
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsCard = document.querySelector('.stats-card');
-        if (statsCard) statsObserver.observe(statsCard);
+        lucide.createIcons();
     </script>
 </body>
 </html>
