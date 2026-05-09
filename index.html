@@ -1,295 +1,478 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Karthik M | Software Developer</title>
-    <meta name="description" content="Karthik M - Software Developer with 7+ years of experience in building robust desktop applications using C++, C#, and SQL.">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
-    <div class="background-effects">
-        <div class="gradient-sphere shape-1"></div>
-        <div class="gradient-sphere shape-2"></div>
-    </div>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#d4e4fa",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-container-highest": "#273647",
+                        "on-error": "#690005",
+                        "surface-tint": "#bec6e0",
+                        "primary": "#bec6e0",
+                        "surface": "#051424",
+                        "primary-container": "#0f172a",
+                        "surface-container-high": "#1c2b3c",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#7bd0ff",
+                        "inverse-primary": "#565e74",
+                        "on-secondary": "#003824",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "secondary-container": "#00a572",
+                        "primary-fixed": "#dae2fd",
+                        "on-secondary-fixed-variant": "#005236",
+                        "inverse-surface": "#d4e4fa",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#010f1f",
+                        "surface-container-low": "#0d1c2d",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "outline": "#909097",
+                        "surface-bright": "#2c3a4c",
+                        "surface-container": "#122131",
+                        "surface-dim": "#051424",
+                        "surface-variant": "#273647",
+                        "secondary": "#4edea3",
+                        "on-primary-container": "#798098",
+                        "tertiary-fixed": "#c4e7ff",
+                        "on-tertiary": "#00354a",
+                        "on-tertiary-container": "#008abb",
+                        "inverse-on-surface": "#233143",
+                        "on-tertiary-fixed": "#001e2c",
+                        "on-secondary-fixed": "#002113",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary": "#283044",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-surface-variant": "#c6c6cd",
+                        "outline-variant": "#45464d",
+                        "tertiary": "#7bd0ff",
+                        "on-surface": "#d4e4fa",
+                        "primary-fixed-dim": "#bec6e0",
+                        "error-container": "#93000a",
+                        "background": "#051424",
+                        "on-secondary-container": "#00311f",
+                        "tertiary-container": "#001a27"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "card-padding": "32px",
+                        "container-max": "1140px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["JetBrains Mono"],
+                        "code-snippet": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["13px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "code-snippet": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
 
-    <nav class="glass-nav">
-        <div class="nav-content">
-            <a href="#home" class="logo">KM.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-            </ul>
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #45464d;
+        }
+
+        .glass-card {
+            background: rgba(18, 33, 49, 0.7);
+            backdrop-filter: blur(12px);
+        }
+
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-body-md overflow-x-hidden">
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface/90 backdrop-blur border-b border-surface-variant dark:border-surface-variant shadow-sm transition-all duration-300">
+        <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+            <span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">KM.</span>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary transition-all duration-200 ease-out" href="#about">About</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary transition-all duration-200 ease-out" href="#skills">Skills</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary transition-all duration-200 ease-out" href="#experience">Experience</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary transition-all duration-200 ease-out" href="#projects">Projects</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary dark:hover:text-secondary transition-all duration-200 ease-out" href="#contact">Contact</a>
+            </div>
+            <a href="resume.pdf" download class="bg-secondary-container text-on-secondary px-6 py-2 rounded-lg font-label-sm text-label-sm scale-95 hover:scale-100 transition-transform duration-200">Resume PDF</a>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="mt-20">
         <!-- Hero Section -->
-        <section id="home" class="hero fade-in">
-            <div class="hero-content">
-                <p class="greeting">Hello, I'm</p>
-                <h1 class="glitch" data-text="KARTHik M">KARTHIK M</h1>
-                <h2 class="role">Software Developer</h2>
-                <p class="summary">
-                    With 7+ years of experience in building robust desktop applications using C++, C#, and SQL. 
-                    Specialized in developing scalable healthcare and embedded solutions with a focus on performance, 
-                    code quality, and Agile delivery.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:karthikraj1996@gmail.com" class="btn primary-btn">
-                        <i data-lucide="mail"></i> karthikraj1996@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/karthik-m-473a07135" target="_blank" class="btn secondary-btn">
-                        <i data-lucide="linkedin"></i> LinkedIn
-                    </a>
-                    <a href="tel:+919741166419" class="btn secondary-btn">
-                        <i data-lucide="phone"></i> 9741166419
-                    </a>
-                    <div class="location">
-                        <i data-lucide="map-pin"></i> Bengaluru, India
-                    </div>
-                </div>
+        <section class="min-h-[80vh] flex flex-col justify-center px-gutter max-w-container-max mx-auto py-section-gap">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full w-fit mb-6">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                <span class="text-label-sm font-label-sm text-secondary">Currently at Applied Materials</span>
+            </div>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-4">Karthik M</h1>
+            <p class="font-headline-md text-headline-md text-secondary mb-8">Software Developer</p>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+                Designing and building robust desktop, embedded, and scalable software solutions with over 7 years of expertise. Currently developing sequencer software for the Endura product at Applied Materials.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-headline-md text-headline-md hover:brightness-110 shadow-[0_0_20px_rgba(78,222,163,0.3)] transition-all duration-200 ease-out" href="#experience">View Experience</a>
+                <a class="border border-outline text-on-surface px-8 py-4 rounded-lg font-headline-md text-headline-md hover:bg-surface-container-highest transition-all duration-200 ease-out" href="#contact">Contact Me</a>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section fade-in">
-            <h2 class="section-title reveal-text">About Me</h2>
-            <div class="glass-card">
-                <p style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
-                    I am a highly skilled Software Developer with over 7 years of extensive experience designing and building robust desktop, embedded, and scalable software solutions. Currently working at <strong>Applied Materials</strong>, I am deeply involved in semiconductor chip manufacturing technology, specifically developing sequencer software for the Endura product. My foundational experience includes major contributions at Philips, where I honed my expertise in C++, C#, multithreading, and performance optimization for critical healthcare systems. Driven by a passion for continuous learning, I am actively expanding my knowledge into Python and Generative AI to stay at the forefront of software innovation.
-                </p>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2 class="section-title reveal-text">Work Experience</h2>
-            <div class="timeline">
-                
-                <!-- Applied Materials -->
-                <div class="timeline-item slide-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3>Software Developer</h3>
-                                <h4>Applied Materials</h4>
-                            </div>
-                            <span class="date-badge">Feb 2026 – Present</span>
-                        </div>
-                        <p class="location-text">Bengaluru, India</p>
-                        <ul class="achievements">
-                            <li>Developing and maintaining software solutions for the Endura product, a critical system in semiconductor chip manufacturing.</li>
-                            <li>Working specifically on the sequencer for the Endura, ensuring high reliability, precision, and performance in complex manufacturing workflows.</li>
-                        </ul>
-                    </div>
+        <!-- About Me Section -->
+        <section class="px-gutter max-w-container-max mx-auto py-section-gap bg-surface-container-lowest rounded-3xl mb-section-gap" id="about">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-secondary to-tertiary opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-300"></div>
+                    <img alt="Karthik M" class="relative rounded-2xl grayscale hover:grayscale-0 transition-all duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-surface-variant object-cover w-full max-w-[400px] mx-auto" src="profile.jpeg" style="mix-blend-mode: normal; filter: contrast(1.1) brightness(0.9);" />
                 </div>
-
-                <!-- Philips -->
-                <div class="timeline-item slide-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3>Software Technologist I</h3>
-                                <h4>Philips</h4>
-                            </div>
-                            <span class="date-badge">Jan 2022 – Feb 2026</span>
-                        </div>
-                        <p class="location-text">Bengaluru, India</p>
-                        <ul class="achievements">
-                            <li>Actively contributed to the design, development, and enhancement of the Philips EPIQ/Affiniti ultrasound imaging solutions.</li>
-                            <li>Implemented multiple product features and resolved software issues across VM10, VM11, VM12, and VM14 platform releases.</li>
-                            <li>Developed core application logic using C++ and C# with a strong focus on performance, reliability, and multithreading techniques.</li>
-                            <li>Investigated and resolved complex multithreading issues, including deadlocks and race conditions.</li>
-                            <li>Served as the Feature Lead for VM12.0 Annotation Improvements, refining workflows and UI/UX.</li>
-                            <li>Engaged in the design and development of VM14.0 Koios Integration, incorporating AI-powered diagnostic support for cancer detection.</li>
-                            <li>Delivered key contributions in the Analysis Domain for diagnostic result calculation, aggregation, and visual presentation.</li>
-                            <li>Developed unit tests using MSTest and HippoMocks for mocking dependencies.</li>
-                            <li>Wrote efficient SQL queries and stored procedures to manipulate backend data.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Mindtree -->
-                <div class="timeline-item slide-in">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <div class="experience-header">
-                            <div>
-                                <h3>Senior Software Engineer</h3>
-                                <h4>Mindtree</h4>
-                            </div>
-                            <span class="date-badge">Oct 2018 – Dec 2021</span>
-                        </div>
-                        <p class="location-text">Bengaluru, India</p>
-                        
-                        <div class="project-block">
-                            <h5>Project: HSUPro</h5>
-                            <p class="project-desc">Native Windows-based desktop application for Sennheiser device users to manage firmware, configurations, and asset info.</p>
-                            <ul class="achievements">
-                                <li>Developed new features and integrated support for new devices.</li>
-                                <li>Managed InstallShield-based installer packages to support seamless deployment and upgrades.</li>
-                                <li>Independently managed and supported the application’s development for over six months.</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-block">
-                            <h5>Project: EPOS Connect</h5>
-                            <p class="project-desc">Cross-platform desktop application supporting asset management, firmware updates, and configuration for EPOS audio devices.</p>
-                            <ul class="achievements">
-                                <li>Contributed to a shared codebase reused across Windows, macOS, and thin clients.</li>
-                                <li>Implemented features using modern C++11 and resolved complex bugs utilizing log and static analysis tools.</li>
-                                <li>Applied STL and multithreading paradigms to develop high-performing code.</li>
-                            </ul>
-                        </div>
+                <div>
+                    <h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">person</span> Professional Summary
+                    </h2>
+                    <div class="space-y-4 text-on-surface-variant font-body-lg text-body-lg leading-relaxed">
+                        <p>I am a highly skilled Software Developer with over 7 years of extensive experience designing and building robust desktop, embedded, and scalable software solutions.</p>
+                        <p>Currently working at <strong>Applied Materials</strong>, I am deeply involved in semiconductor chip manufacturing technology, specifically developing sequencer software for the Endura product ensuring high reliability and precision.</p>
+                        <p>My foundational experience includes major contributions at <strong>Philips</strong> and <strong>Mindtree</strong>, where I honed my expertise in C++, C#, multithreading, and performance optimization for critical healthcare and enterprise systems. Driven by a passion for continuous learning, I am actively expanding my knowledge into Python and Generative AI to stay at the forefront of software innovation.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="section">
-            <h2 class="section-title reveal-text">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category glass-card hover-lift">
-                    <h3><i data-lucide="code-2"></i> Languages</h3>
-                    <div class="tags">
-                        <span class="tag">C++ (11/14/17)</span>
-                        <span class="tag">C</span>
-                        <span class="tag">C#</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL</span>
+        <section class="px-gutter max-w-container-max mx-auto py-section-gap" id="skills">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-12 text-center">Technical Arsenal</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Languages -->
+                <div class="bg-surface-container p-card-padding rounded-2xl border border-outline-variant hover:border-secondary transition-colors duration-200 shadow-lg">
+                    <span class="material-symbols-outlined text-tertiary text-4xl mb-4">code</span>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">C++ (11/14/17)</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">C#</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">C</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">Python</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">SQL</span>
                     </div>
                 </div>
-                
-                <div class="skill-category glass-card hover-lift">
-                    <h3><i data-lucide="wrench"></i> Tools & IDEs</h3>
-                    <div class="tags">
-                        <span class="tag">Visual Studio</span>
-                        <span class="tag">SSMS</span>
-                        <span class="tag">Installshield</span>
-                        <span class="tag">Wix Toolset</span>
-                        <span class="tag">Windbg</span>
-                        <span class="tag">SonarQube</span>
-                        <span class="tag">ReSharper</span>
+                <!-- Emerging Tech -->
+                <div class="bg-surface-container p-card-padding rounded-2xl border border-outline-variant hover:border-secondary transition-colors duration-200 shadow-lg">
+                    <span class="material-symbols-outlined text-secondary text-4xl mb-4">memory</span>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Emerging Tech & AI</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">Generative AI</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">AI Integration</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">Prompt Engineering</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">STL & Multithreading</span>
                     </div>
                 </div>
-
-                <div class="skill-category glass-card hover-lift">
-                    <h3><i data-lucide="check-circle"></i> Unit Testing</h3>
-                    <div class="tags">
-                        <span class="tag">MSTest</span>
-                        <span class="tag">Hippomocks</span>
-                    </div>
-                </div>
-
-                <div class="skill-category glass-card hover-lift">
-                    <h3><i data-lucide="git-branch"></i> Version Control & OS</h3>
-                    <div class="tags">
-                        <span class="tag">Git</span>
-                        <span class="tag">Jira</span>
-                        <span class="tag">Azure DevOps</span>
-                        <span class="tag">Confluence</span>
-                        <span class="tag">Windows</span>
-                        <span class="tag">macOS</span>
-                    </div>
-                </div>
-
-                <div class="skill-category glass-card hover-lift">
-                    <h3><i data-lucide="cpu"></i> Emerging Tech</h3>
-                    <div class="tags">
-                        <span class="tag">Generative AI</span>
-                        <span class="tag">AI Integration</span>
+                <!-- Tools -->
+                <div class="bg-surface-container p-card-padding rounded-2xl border border-outline-variant hover:border-secondary transition-colors duration-200 shadow-lg">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">construction</span>
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Tools & IDEs</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">Visual Studio</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">Git & Azure DevOps</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">Windbg</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">MSTest / Hippomocks</span>
+                        <span class="px-3 py-1 bg-surface-container-high border border-slate-800 rounded-full text-secondary font-label-sm text-label-sm">SSMS & SonarQube</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education & Certifications Section -->
-        <section id="education" class="section dual-column">
-            <div class="column">
-                <h2 class="section-title reveal-text">Education</h2>
-                <div class="edu-cards">
-                    <div class="edu-card glass-card">
-                        <h4>Bachelor of Engineering in CSE</h4>
-                        <p class="institution">SJB Institute of Technology, Bengaluru</p>
-                        <div class="edu-meta">
-                            <span class="score">72.08%</span>
-                            <span class="year">June 2018</span>
+        <!-- Work Experience -->
+        <section class="px-gutter max-w-container-max mx-auto py-section-gap" id="experience">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-16">Professional Journey</h2>
+            <div class="relative space-y-12 timeline-line pl-8">
+                <!-- Applied Materials -->
+                <div class="relative">
+                    <div class="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-secondary border-4 border-surface shadow-[0_0_10px_#4edea3] animate-pulse"></div>
+                    <div class="grid md:grid-cols-[200px_1fr] gap-4">
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">FEB 2026 — PRESENT</span>
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface">Software Developer</h3>
+                            <p class="text-secondary mb-4">Applied Materials</p>
+                            <ul class="space-y-3 text-on-surface-variant">
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Developing and maintaining software solutions for the Endura product, a critical system in semiconductor chip manufacturing.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Working specifically on the sequencer for the Endura, ensuring high reliability, precision, and performance in complex manufacturing workflows.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="edu-card glass-card">
-                        <h4>Pre-University Course (10+2)</h4>
-                        <p class="institution">Leaders’ PU College, Gauribidanur</p>
-                        <div class="edu-meta">
-                            <span class="score">87.17%</span>
-                            <span class="year">July 2014</span>
+                </div>
+                <!-- Philips -->
+                <div class="relative">
+                    <div class="absolute -left-[33px] top-1 w-5 h-5 rounded-full bg-slate-700 border-4 border-surface"></div>
+                    <div class="grid md:grid-cols-[200px_1fr] gap-4">
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">JAN 2022 — FEB 2026</span>
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface">Software Technologist I</h3>
+                            <p class="text-secondary mb-4">Philips</p>
+                            <ul class="space-y-3 text-on-surface-variant">
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Actively contributed to the design and continuous enhancement of the Philips EPIQ/Affiniti ultrasound imaging solutions across major platform releases.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Investigated and resolved complex multithreading issues, including deadlocks and race conditions, improving application stability.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Engaged in the design and development of the VM14.0 Koios Integration, incorporating AI-powered diagnostic support to assist clinicians in cancer detection.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Developed unit tests using MSTest and HippoMocks to ensure code reliability and maintainability.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="edu-card glass-card">
-                        <h4>Class 10 (ICSE)</h4>
-                        <p class="institution">Vidyanidhi Public School, Gauribidanur</p>
-                        <div class="edu-meta">
-                            <span class="score">82.82%</span>
-                            <span class="year">April 2012</span>
+                </div>
+                <!-- Mindtree -->
+                <div class="relative">
+                    <div class="absolute -left-[33px] top-1 w-5 h-5 rounded-full bg-slate-700 border-4 border-surface"></div>
+                    <div class="grid md:grid-cols-[200px_1fr] gap-4">
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">OCT 2018 — DEC 2021</span>
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-on-surface">Senior Software Engineer</h3>
+                            <p class="text-secondary mb-4">Mindtree</p>
+                            <ul class="space-y-3 text-on-surface-variant">
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Developed HSUPro, a native Windows desktop app for Sennheiser devices, and created InstallShield-based installers.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span>
+                                    <span>Implemented new features for EPOS Connect, a cross-platform (Windows, macOS) app using modern C++11 and multithreading paradigms.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="column">
-                <h2 class="section-title reveal-text">Certifications & Awards</h2>
-                
-                <div class="awards-list glass-card">
-                    <h3 class="subsection-title">Certifications</h3>
-                    <ul class="cert-list">
-                        <li><i data-lucide="award"></i> Programming for Everybody (Python) (Univ. of Michigan, Apr 2026)</li>
-                        <li><i data-lucide="award"></i> Intro to Generative AI for Software Dev (DeepLearning.AI, Apr 2026)</li>
-                        <li><i data-lucide="award"></i> AI For Everyone (DeepLearning.AI, Mar 2026)</li>
-                        <li><i data-lucide="award"></i> Identifying Security Vulnerabilities in C/C++ (Coursera, 2021)</li>
-                        <li><i data-lucide="award"></i> Object Oriented Data Structures in C++ (Coursera, 2020)</li>
-                        <li><i data-lucide="award"></i> C++ STL Programming (Aprameyah Tech, 2020)</li>
-                        <li><i data-lucide="award"></i> C++ Programming (Aprameyah Tech, 2019)</li>
-                    </ul>
+        <!-- Featured Work / Projects Grid -->
+        <section class="px-gutter max-w-container-max mx-auto py-section-gap" id="projects">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-12">Featured Project Domains</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-surface-container rounded-2xl overflow-hidden border border-outline-variant hover:translate-y-[-4px] transition-all duration-300 shadow-lg hover:shadow-secondary/10">
+                    <div class="h-48 overflow-hidden relative">
+                        <img alt="Medical Imaging UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-card-padding">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">EPIQ/Affiniti Ultrasound</h3>
+                        <p class="text-on-surface-variant mb-6">Contributed to the AI-powered diagnostic integration (Koios) and annotation improvements for state-of-the-art medical imaging platforms at Philips.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-surface-container-high rounded text-secondary font-label-sm text-label-sm">C++</span>
+                            <span class="px-2 py-1 bg-surface-container-high rounded text-secondary font-label-sm text-label-sm">C#</span>
+                            <span class="px-2 py-1 bg-surface-container-high rounded text-secondary font-label-sm text-label-sm">Multithreading</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group bg-surface-container rounded-2xl overflow-hidden border border-outline-variant hover:translate-y-[-4px] transition-all duration-300 shadow-lg hover:shadow-secondary/10">
+                    <div class="h-48 overflow-hidden relative">
+                        <img alt="Semiconductor Machinery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+                    </div>
+                    <div class="p-card-padding">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Endura Sequencer</h3>
+                        <p class="text-on-surface-variant mb-6">Developing core sequencer software for the Applied Materials Endura system, ensuring high-reliability and precision in semiconductor manufacturing.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-surface-container-high rounded text-secondary font-label-sm text-label-sm">Embedded Systems</span>
+                            <span class="px-2 py-1 bg-surface-container-high rounded text-secondary font-label-sm text-label-sm">High Performance</span>
+                            <span class="px-2 py-1 bg-surface-container-high rounded text-secondary font-label-sm text-label-sm">C++</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <h3 class="subsection-title mt-4">Awards</h3>
-                    <ul class="award-list">
-                        <li>
-                            <i data-lucide="star" class="star-icon"></i>
-                            <strong>SPOT Award (Philips)</strong>
-                            <p>For working on critical deliverables.</p>
-                        </li>
-                        <li>
-                            <i data-lucide="star" class="star-icon"></i>
-                            <strong>A-Team Award - 5 times (Mindtree)</strong>
-                            <p>For excellent team effort.</p>
-                        </li>
-                        <li>
-                            <i data-lucide="star" class="star-icon"></i>
-                            <strong>Unstoppable & HatsOff Awards (Mindtree)</strong>
-                            <p>For excellent contribution.</p>
-                        </li>
-                    </ul>
+        <!-- Certifications & Awards -->
+        <section class="px-gutter max-w-container-max mx-auto py-section-gap">
+            <div class="grid md:grid-cols-[1fr_400px] gap-8">
+                <!-- Certifications -->
+                <div class="bg-surface-container p-card-padding rounded-2xl border border-outline-variant shadow-lg">
+                    <h2 class="font-headline-md text-headline-md text-on-surface mb-8 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-secondary">workspace_premium</span> Certifications
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-start border-b border-outline-variant pb-4">
+                            <div>
+                                <h4 class="font-code-snippet text-code-snippet text-secondary mb-1">Programming for Everybody (Python)</h4>
+                                <p class="text-on-surface-variant">University of Michigan</p>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface">
+                                <span class="font-label-sm text-label-sm text-tertiary">Apr 2026</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-outline-variant pb-4">
+                            <div>
+                                <h4 class="font-code-snippet text-code-snippet text-secondary mb-1">Intro to Generative AI for Software Dev</h4>
+                                <p class="text-on-surface-variant">DeepLearning.AI</p>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface">
+                                <span class="font-label-sm text-label-sm text-tertiary">Apr 2026</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start border-b border-outline-variant pb-4">
+                            <div>
+                                <h4 class="font-code-snippet text-code-snippet text-secondary mb-1">AI For Everyone</h4>
+                                <p class="text-on-surface-variant">DeepLearning.AI</p>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface">
+                                <span class="font-label-sm text-label-sm text-tertiary">Mar 2026</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-code-snippet text-code-snippet text-secondary mb-1">C++ Security & OOP Specializations</h4>
+                                <p class="text-on-surface-variant">Coursera</p>
+                            </div>
+                            <div class="flex items-center gap-1 text-on-surface">
+                                <span class="font-label-sm text-label-sm text-tertiary">2020 - 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div class="bg-gradient-to-br from-surface-container to-surface-container-high p-card-padding rounded-2xl border border-secondary/30 relative overflow-hidden shadow-lg">
+                    <div class="relative z-10">
+                        <h2 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">star</span> Awards
+                        </h2>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-surface-container-lowest/50 rounded-lg border border-outline-variant">
+                                <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest block mb-2">Philips</span>
+                                <p class="text-on-surface font-body-md text-body-md">SPOT Award</p>
+                                <p class="text-on-surface-variant text-sm mt-1">Recognized for working on critical deliverables.</p>
+                            </div>
+                            <div class="p-4 bg-surface-container-lowest/50 rounded-lg border border-outline-variant">
+                                <span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest block mb-2">Mindtree</span>
+                                <p class="text-on-surface font-body-md text-body-md">A-Team Award (5 Times)</p>
+                                <p class="text-on-surface-variant text-sm mt-1">Unstoppable & HatsOff Awards for excellent contribution and team effort.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -right-10 -bottom-10 opacity-5">
+                        <span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'wght' 700;">emoji_events</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Contact -->
+        <section class="px-gutter max-w-container-max mx-auto py-section-gap mb-section-gap" id="contact">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="font-headline-md text-headline-md text-on-surface mb-8">Education</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-on-surface">B.E. in Computer Science and Engineering</h4>
+                            <p class="text-secondary">SJB Institute of Technology, Bengaluru</p>
+                            <p class="text-on-surface-variant mt-2">June 2018</p>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-on-surface">Pre-University Course (10+2)</h4>
+                            <p class="text-secondary">Leaders’ PU College, Gauribidanur</p>
+                            <p class="text-on-surface-variant mt-2">July 2014</p>
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-headline-md text-on-surface">Contact Information</h4>
+                            <ul class="text-on-surface-variant space-y-2 mt-4">
+                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">mail</span> karthikraj1996@gmail.com</li>
+                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">phone</span> +91 9741166419</li>
+                                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary">location_on</span> Bengaluru, India</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-card-padding rounded-3xl border border-outline-variant shadow-2xl">
+                    <h2 class="font-headline-md text-headline-md text-on-surface mb-6">Get in Touch</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="font-label-sm text-label-sm text-on-surface-variant mb-2 block">FULL NAME</label>
+                            <input class="w-full bg-surface-container border border-outline-variant rounded-lg p-3 text-on-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-all outline-none" placeholder="Your Name" type="text"/>
+                        </div>
+                        <div>
+                            <label class="font-label-sm text-label-sm text-on-surface-variant mb-2 block">EMAIL ADDRESS</label>
+                            <input class="w-full bg-surface-container border border-outline-variant rounded-lg p-3 text-on-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-all outline-none" placeholder="you@example.com" type="email"/>
+                        </div>
+                        <div>
+                            <label class="font-label-sm text-label-sm text-on-surface-variant mb-2 block">MESSAGE</label>
+                            <textarea class="w-full bg-surface-container border border-outline-variant rounded-lg p-3 text-on-surface focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-all outline-none" placeholder="How can I help you?" rows="4"></textarea>
+                        </div>
+                        <button class="w-full bg-secondary text-on-secondary py-4 rounded-lg font-headline-md text-headline-md hover:brightness-110 shadow-[0_0_15px_rgba(78,222,163,0.3)] transition-all duration-200">Send Message</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Karthik M. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-surface-container-low dark:bg-surface-container-low w-full py-section-gap border-t border-surface-variant dark:border-surface-variant">
+        <div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-4">
+            <div class="flex flex-col gap-2">
+                <span class="font-label-sm text-label-sm text-on-surface dark:text-on-surface">Karthik M / Software Developer</span>
+                <span class="font-label-sm text-label-sm (JetBrains Mono) text-on-surface-variant dark:text-on-surface-variant opacity-80 hover:opacity-100 transition-opacity">© 2026 Karthik M. Built with Precision.</span>
+            </div>
+            <div class="flex gap-6">
+                <a class="text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm (JetBrains Mono) hover:text-secondary dark:hover:text-secondary transition-colors duration-200" href="https://www.linkedin.com/in/karthik-m-473a07135" target="_blank">LinkedIn</a>
+                <a class="text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm (JetBrains Mono) hover:text-secondary dark:hover:text-secondary transition-colors duration-200" href="mailto:karthikraj1996@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
